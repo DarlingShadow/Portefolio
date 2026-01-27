@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Shadow Dev | Portfolio</title>
+<link rel="icon" type="image/png" href="logo_shadow_dev.png">
+
+<style>
+/* ================= BASE ================= */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Arial, sans-serif;
+    background: linear-gradient(135deg, #8434b3, #6f05da);
+    color: #fff;
+    overflow-x: hidden;
+}
+
+/* ================= HEADER ================= */
+header {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+h1 {
+    font-size: 3.5em;
+    margin-bottom: 20px;
+}
+
+.typing-caret::after {
+    content: "|";
+    margin-left: 5px;
+    animation: blink 1s infinite;
+}
+
+@keyframes blink {
+    0%,50%,100% { opacity: 1; }
+    25%,75% { opacity: 0; }
+}
+
+header p {
+    font-size: 1.2em;
+    opacity: 0.9;
+}
+
+/* ================= SECTIONS ================= */
+section {
+    padding: 80px 20px;
+    max-width: 1200px;
+    margin: auto;
+    opacity: 0;
+    transform: translateY(60px);
+    transition: all 1s ease;
+}
+
+section.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+h2 {
+    font-size: 2.5em;
+    margin-bottom: 30px;
+    text-align: center;
+}
+
+/* ================= PROJECTS ================= */
+.projects {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 25px;
+}
+
+.project {
+    background: rgba(0,0,0,0.2);
+    border-radius: 20px;
+    padding: 25px;
+    backdrop-filter: blur(10px);
+    opacity: 0;
+    transform: translateY(40px) scale(0.95);
+    filter: blur(5px);
+    transition: all 0.8s ease;
+}
+
+.project.visible {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+    filter: blur(0);
+}
+
+.project:hover {
+    transform: scale(1.08) rotate(1deg);
+    box-shadow: 0 20px 40px rgba(0,0,0,0.4);
+}
+
+.project h3 {
+    margin-bottom: 10px;
+}
+
+.project p {
+    margin-bottom: 15px;
+    opacity: 0.9;
+}
+
+.project a {
+    color: #fff;
+    text-decoration: none;
+    font-weight: bold;
+    border-bottom: 2px solid transparent;
+    transition: 0.3s;
+}
+
+.project a:hover {
+    border-color: #fff;
+}
+
+/* ================= CONTACT ================= */
+#contact p {
+    text-align: center;
+    font-size: 1.1em;
+}
+
+/* ================= FOOTER ================= */
+footer {
+    text-align: center;
+    padding: 20px;
+    background: rgba(0,0,0,0.25);
+}
+
+/* ================= WAVE ================= */
+.wave {
+    position: fixed;
+    bottom: 0;
+    width: 200%;
+    height: 200px;
+    background: rgba(255,255,255,0.05);
+    animation: wave 12s linear infinite;
+    z-index: -1;
+}
+
+@keyframes wave {
+    from { transform: translateX(0); }
+    to { transform: translateX(-50%); }
+}
+</style>
+</head>
+
+<body>
+
+<header>
+    <h1 id="typing-title"></h1>
+    <p id="typing-subtitle"></p>
+</header>
+
+<section id="about">
+    <h2>À propos</h2>
+    <p style="text-align:center">
+        Salut ! Je suis un développeur passionné par le web, les bots Discord et les projets interactifs.
+        J’aime créer des expériences modernes avec HTML, CSS et JavaScript.
+    </p>
+</section>
+
+<section id="projects">
+    <h2>Mes Projets</h2>
+    <div class="projects">
+
+        <div class="project">
+            <h3>Calculatrice JavaScript</h3>
+            <p>Calculatrice simple et responsive en HTML, CSS et JavaScript.</p>
+            <a href="https://shadow-75wr.onrender.com" target="_blank">Voir le projet</a>
+        </div>
+
+        <div class="project">
+            <h3>Jeu d’échecs</h3>
+            <p>Jeu d’échecs développé en HTML, CSS et JavaScript.</p>
+            <a href="https://chesscomshadowdev.netlify.app" target="_blank">Voir le projet</a>
+        </div>
+
+        <div class="project">
+            <h3>Serveur Discord</h3>
+            <p>Serveur Discord regroupant tous mes bots et projets.</p>
+            <a href="https://discord.gg/C7qu3HvbFm" target="_blank">Rejoindre</a>
+        </div>
+
+        <div class="project">
+            <h3>Animations CSS</h3>
+            <p>Collection d’animations modernes 100% CSS.</p>
+            <a href="#">Voir le code</a>
+        </div>
+
+        <div class="project">
+            <h3>Bot Discord</h3>
+            <p>Bot Discord multifonctions : musique, commandes slash, modération.</p>
+            <a href="#">Voir le code</a>
+        </div>
+
+        <div class="project">
+            <h3>Application Web</h3>
+            <p>Application web interactive avec JavaScript et API.</p>
+            <a href="#">Voir le projet</a>
+        </div>
+
+    </div>
+</section>
+
+<section id="contact">
+    <h2>Contact</h2>
+    <p>
+        📧 shadowdevshop@gmail.com <br>
+        🔗 GitHub  : 
+        <a href="https://github.com/DarlingShadow">Mon GitHub</a>
+    </p>
+</section>
+
+<footer>
+    <p>© 2025 Shadow Dev — Tous droits réservés</p>
+</footer>
+
+<div class="wave"></div>
+
+<script>
+/* ====== TYPING EFFECT ====== */
+const titleText = "Shadow Dev";
+const subtitleText = "Développeur Web • Bots Discord • Projets interactifs";
+
+let t = 0, s = 0;
+
+function typeTitle() {
+    if (t < titleText.length) {
+        document.getElementById("typing-title").textContent += titleText[t++];
+        setTimeout(typeTitle, 80);
+    } else {
+        document.getElementById("typing-title").classList.add("typing-caret");
+        setTimeout(typeSubtitle, 100);
+    }
+}
+
+function typeSubtitle() {
+    if (s < subtitleText.length) {
+        document.getElementById("typing-subtitle").textContent += subtitleText[s++];
+        setTimeout(typeSubtitle, 20);
+    }
+}
+
+typeTitle();
+
+/* ====== SCROLL ANIMATIONS ====== */
+const observer = new IntersectionObserver(entries => {
+    entries.forEach(entry => {
+        if (entry.isIntersecting) {
+            entry.target.classList.add("visible");
+        }
+    });
+}, { threshold: 0.1 });
+
+document.querySelectorAll("section, .project").forEach(el => observer.observe(el));
+</script>
+
+</body>
+</html>
